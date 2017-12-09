@@ -27,8 +27,9 @@ public class EditItemPrice {
 
         System.out.print("Please enter food ID: ");
         String foodid = scan.nextLine();
-
-        for (int i = 0; i < ResMenu.size(); i++) {
+        
+       
+            for (int i = 0; i < ResMenu.size(); i++) {
             if (foodid.equals(ResMenu.get(i).getFoodID())) {
                 ans = true;
                 System.out.println("------------FOOD DETAILS-------------");
@@ -41,7 +42,7 @@ public class EditItemPrice {
                 System.out.println("Food Price(RM): " + ResMenu.get(i).getPrice());
                 System.out.println("Food Promotional Rate(%): " + ResMenu.get(i).getPromoRate());
 
-                System.out.println("Please enter the detail you want to update?\n");
+                System.out.println("\nPlease enter the detail you want to update?");
                 System.out.println("1. Food Name");
                 System.out.println("2. Food Description");
                 System.out.println("3. Food Category");
@@ -49,7 +50,7 @@ public class EditItemPrice {
                 System.out.println("5. Food Price(RM)");
                 System.out.println("6. Food Promotional Rate");
                 System.out.print("Please select one option to edit(1-6) :");
-                int input = scan.nextInt();
+                int input = Integer.parseInt(scan.nextLine());
 
                 if (input < 1 || input > 6) {
                     System.out.println("\nOps! Option entered out of range. Please enter between 1-6");
@@ -88,13 +89,27 @@ public class EditItemPrice {
                     }
                     System.out.println("\n\nFood Detail Updated Successfully!!!");
                     System.out.println("\n****** UPDATED FOOD DETAILS ******");
-                    System.out.println("----------------------------------");
-                    
+
+                    System.out.println("--------------------------------------------------------------------------------------------------------------------------");
+                    System.out.println("Food ID  Food Name                  Description              Food Category     Status     "
+                            + "Price(RM)    Promotional Rate(%)");
+                    System.out.println("--------------------------------------------------------------------------------------------------------------------------");
+
+                    for (int j = 0; j < ResMenu.size(); j++) {
+
+                        Service service = ResMenu.get(j);
+                        String str = String.format("%-100s\n", service);
+                        System.out.print(str);
+                    }
 
                 }
 
-            }
+            
+            
         }
+        }
+
+        
 
     }
 
