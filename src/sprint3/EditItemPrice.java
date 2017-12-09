@@ -1,5 +1,7 @@
 package sprint3;
 
+//Author： Low Kah Yee
+
 import java.util.ArrayList;
 import java.util.Scanner;
 import sprint3.Service;
@@ -27,9 +29,8 @@ public class EditItemPrice {
 
         System.out.print("Please enter food ID: ");
         String foodid = scan.nextLine();
-        
-       
-            for (int i = 0; i < ResMenu.size(); i++) {
+
+        for (int i = 0; i < ResMenu.size(); i++) {
             if (foodid.equals(ResMenu.get(i).getFoodID())) {
                 ans = true;
                 System.out.println("------------FOOD DETAILS-------------");
@@ -51,10 +52,14 @@ public class EditItemPrice {
                 System.out.println("6. Food Promotional Rate");
                 System.out.print("Please select one option to edit(1-6) :");
                 int input = Integer.parseInt(scan.nextLine());
-
+                
+                
+                
+                
                 if (input < 1 || input > 6) {
                     System.out.println("\nOps! Option entered out of range. Please enter between 1-6");
-                } else {
+                }
+                else {
                     switch (input) {
                         case 1: {
                             System.out.print("Food Name: ");
@@ -101,15 +106,10 @@ public class EditItemPrice {
                         String str = String.format("%-100s\n", service);
                         System.out.print(str);
                     }
-
                 }
 
-            
-            
+            }
         }
-        }
-
-        
 
     }
 
