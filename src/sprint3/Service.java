@@ -79,6 +79,6 @@ public class Service {
  
     
     public String toString(){
-        return String.format("%-5s %-25s %-29s %-13s %-13s %-10s %-8s",foodID, foodName, description, foodCat, status, price, promoRate);
+        return String.format("%-7s %-25s %-29s %-13s %-13s %-10s %-8s",foodID, foodName, description, foodCat, status, price, promoRate);
     }
 }
